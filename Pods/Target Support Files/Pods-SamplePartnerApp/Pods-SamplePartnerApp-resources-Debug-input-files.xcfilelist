@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-SamplePartnerApp/Pods-SamplePartnerApp-resources.sh
+${PODS_ROOT}/MessageKit/Sources/Assets.xcassets
+${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle

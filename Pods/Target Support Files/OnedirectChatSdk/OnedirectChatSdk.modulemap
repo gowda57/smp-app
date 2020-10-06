@@ -1,0 +1,6 @@
+framework module OnedirectChatSdk {
+  umbrella header "OnedirectChatSdk-umbrella.h"
+
+  export *
+  module * { export * }
+}

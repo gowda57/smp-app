@@ -1,0 +1,65 @@
+{
+  "name": "OnedirectChatSdk",
+  "version": "1.0",
+  "summary": "iOS SDK for OneDirect chat",
+  "description": "iOS SDK for OneDirect chat with basic functionalities",
+  "homepage": "https://onedirect.in",
+  "license": "MIT",
+  "authors": "ONEDIRECT",
+  "platforms": {
+    "ios": "12.0"
+  },
+  "swift_versions": "4.2",
+  "source": {
+    "git": "",
+    "tag": ""
+  },
+  "source_files": "OnedirectChatSdk/**/*.{h,m,swift}",
+  "public_header_files": "OnedirectChatSdk/*.h",
+  "static_framework": true,
+  "dependencies": {
+    "Alamofire": [
+      "~> 4.9.1"
+    ],
+    "SecureDefaults": [
+      "1.0.5"
+    ],
+    "Firebase/Core": [
+
+    ],
+    "Firebase/Analytics": [
+
+    ],
+    "Firebase/Storage": [
+
+    ],
+    "Firebase/Firestore": [
+
+    ],
+    "Firebase/Database": [
+
+    ],
+    "CodableFirebase": [
+
+    ],
+    "FirebaseAuth": [
+
+    ],
+    "SideMenuSwift": [
+
+    ],
+    "IQKeyboardManagerSwift": [
+
+    ],
+    "SwiftyJSON": [
+      "~> 4.0"
+    ],
+    "SDWebImage": [
+      "~> 5.0"
+    ],
+    "MessageKit": [
+
+    ]
+  },
+  "swift_version": "4.2"
+}
