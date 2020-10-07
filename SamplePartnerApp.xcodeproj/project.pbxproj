@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A018681025060DF700F7F5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018680F25060DF700F7F5BD /* AppDelegate.swift */; };
-		A018681225060DF700F7F5BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018681125060DF700F7F5BD /* SceneDelegate.swift */; };
-		A018681425060DF700F7F5BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018681325060DF700F7F5BD /* ContentView.swift */; };
 		A018682425060E5F00F7F5BD /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018682325060E5F00F7F5BD /* LaunchViewController.swift */; };
+		A0E88BEE252D7804006D637E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E88BED252D7804006D637E /* LoginViewController.swift */; };
 		B0590CF52A87B968926CD2D1 /* Pods_SamplePartnerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C1076192904DC3F92DE2D6 /* Pods_SamplePartnerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,13 +18,12 @@
 		2F9BDB956E09841ADE07D100 /* Pods-SamplePartnerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamplePartnerApp.debug.xcconfig"; path = "Target Support Files/Pods-SamplePartnerApp/Pods-SamplePartnerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A018680C25060DF700F7F5BD /* SamplePartnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamplePartnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A018680F25060DF700F7F5BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A018681125060DF700F7F5BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A018681325060DF700F7F5BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A018681525060DFE00F7F5BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A018681825060DFE00F7F5BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A018681B25060DFE00F7F5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A018681D25060DFE00F7F5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A018682325060E5F00F7F5BD /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		A0E88BED252D7804006D637E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E925407106BAD41E11EC113F /* Pods-SamplePartnerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamplePartnerApp.release.xcconfig"; path = "Target Support Files/Pods-SamplePartnerApp/Pods-SamplePartnerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,13 +78,12 @@
 			isa = PBXGroup;
 			children = (
 				A018680F25060DF700F7F5BD /* AppDelegate.swift */,
-				A018681125060DF700F7F5BD /* SceneDelegate.swift */,
-				A018681325060DF700F7F5BD /* ContentView.swift */,
 				A018682325060E5F00F7F5BD /* LaunchViewController.swift */,
 				A018681525060DFE00F7F5BD /* Assets.xcassets */,
 				A018681A25060DFE00F7F5BD /* LaunchScreen.storyboard */,
 				A018681D25060DFE00F7F5BD /* Info.plist */,
 				A018681725060DFE00F7F5BD /* Preview Content */,
+				A0E88BED252D7804006D637E /* LoginViewController.swift */,
 			);
 			path = SamplePartnerApp;
 			sourceTree = "<group>";
@@ -200,9 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E88BEE252D7804006D637E /* LoginViewController.swift in Sources */,
 				A018681025060DF700F7F5BD /* AppDelegate.swift in Sources */,
-				A018681225060DF700F7F5BD /* SceneDelegate.swift in Sources */,
-				A018681425060DF700F7F5BD /* ContentView.swift in Sources */,
 				A018682425060E5F00F7F5BD /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

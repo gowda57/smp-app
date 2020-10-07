@@ -1,47 +1,28 @@
-/*
- MIT License
- 
- Copyright (c) 2017-2019 MessageKit
- 
- Multiple commands produce '/Users/gowthamgowdatc/Library/Developer/Xcode/DerivedData/SamplePartnerApp-ayypoovutzhiesedrtndsrxgtxzm/Build/Products/Debug-iphonesimulator/SamplePartnerApp.app/Assets.car':
- 1) Target 'SamplePartnerApp' (project 'SamplePartnerApp') has compile command with input '/Users/gowthamgowdatc/Documents/ios-onedirect/SamplePartnerApp/SamplePartnerApp/Preview Content/Preview Assets.xcassets'
- 2) That command depends on command in Target 'SamplePartnerApp' (project 'SamplePartnerApp'): script phase “[CP] Copy Pods Resources”
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
- */
-
-
-
 //      this is sample partner application file
 
 
 import UIKit
 import SafariServices
-import OnedirectChatSdk
 
-final internal class LaunchViewController: UITableViewController {
+final internal class LaunchViewController: UITableViewController, SdkCallbacks {
+    
     var chatSdk: ChatSdk?
+    var brandCustomerId: String
+    var isPrechatRequired: Bool
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    init(brandCustomerId: String, isPrechatRequired: Bool) {
+        self.brandCustomerId = brandCustomerId
+        self.isPrechatRequired = isPrechatRequired
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.brandCustomerId = ""
+        self.isPrechatRequired = true
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -67,6 +48,10 @@ final internal class LaunchViewController: UITableViewController {
         
         // for production
         self.chatSdk = ChatSdk.build(brandHash: "ODAyOF8xNTk5MzA2MTQ2MTEzXzQ=")
+        
+        self.chatSdk!.doSdkLogin(brandUserIdentifier: brandCustomerId)
+        
+        chatSdk?.registerSdkCallBacks(sdkCallbacks: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -125,8 +110,16 @@ final internal class LaunchViewController: UITableViewController {
             return
         }
     }
-
-    // MARK: - helper functions
+    
+    func openURL(_ url: URL) {
+        let webViewController = SFSafariViewController(url: url)
+        if #available(iOS 10.0, *) {
+            webViewController.preferredControlTintColor = .white
+        }
+        present(webViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Helper functions
     
     func allTicketsClicked() {
         // TODO - create a new class with constructor taking parametes [All, Open, Closed]
@@ -146,6 +139,18 @@ final internal class LaunchViewController: UITableViewController {
     func createChat(brandArticleId: String) {
         // use chatSdk object to call startChatFlow
         
-        chatSdk!.startChatFlow(isPreChatRequired: true, brandArticleId: brandArticleId)
+        chatSdk!.startChatFlow(isPreChatRequired: self.isPrechatRequired, brandArticleId: brandArticleId)
+        
+    }
+    
+    
+    func onSdkExit() {
+        
+    }
+    
+    func onTicketRaised(sessionHash: String, ticketId: CLong, customerHash: String) {
+        print(sessionHash)
+        print(ticketId)
+        print(customerHash)
     }
 }
